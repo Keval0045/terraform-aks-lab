@@ -27,3 +27,18 @@ jobs:
 
       - name: Run terraform validate
         run: terraform validate
+
+  terraform-validate:
+    runs-on: ubuntu-latest
+    name: terraform plan validation
+    needs: terraform-check
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.2.4
+      - name: Terraform Init
+        run: terraform init
+      - name: Terraform Plan (validate infrastructure)
+        run: terraform plan -no-color
