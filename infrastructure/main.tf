@@ -7,3 +7,4 @@ resource "azurerm_resource_group" "example" {
   location = "Canada Central"
 }
     # intentional bad formatting
+# test CI
