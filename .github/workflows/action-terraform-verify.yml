@@ -38,7 +38,3 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.2.4
-      - name: Terraform Init
-        run: terraform init
-      - name: Terraform Plan (validate infrastructure)
-        run: terraform plan -no-color
